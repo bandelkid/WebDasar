@@ -1,15 +1,22 @@
 * {
   box-sizing: border-box;
 }
+
+
+header {
+  display: inline;
+}
+
 #content {
-  float: left;
-  width: 75%;
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
 
 aside {
-  float: right;
-  width: 25%;
-  padding-left: 20px;
+  flex : 1;
+  
 }
 body {
   font-family: 'Quicksand', sans-serif;
@@ -38,7 +45,7 @@ nav a {
 
   font-weight: 400;
   text-decoration: none;
-
+  padding: 10px;
   color: white;
 }
 
@@ -67,7 +74,7 @@ nav a:hover {
   border-radius: 5px;
 
   padding: 20px;
-  margin-top: 20px;
+ 
 }
 
 .jumbotron {
@@ -78,18 +85,36 @@ nav a:hover {
   color: white;
 }
 
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+
+  gap: 2rem;
+}
+
 nav li {
-  display: inline;
   list-style-type: none;
-  margin-right: 20px;
+ 
 }
 
 nav {
   background-color: #00a2c6;
   padding: 5px;
+  position: sticky;
+  top: 0;
 }
 
 main {
   padding: 20px;
-  overflow: auto;
+  
+  display: flex;
+  gap: 1.5rem;
 }      
+
+@media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+}
